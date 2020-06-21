@@ -2,17 +2,17 @@ language: cpp
 
 jobs:
   include:
-    - os: osx
-      compiler: gcc
-      osx_image: xcode11.2
-      env:
-        - GCC_VER="9"
-        - MATRIX_EVAL="CC=gcc-${GCC_VER} && CXX=g++-${GCC_VER}"
-      addons:
-        homebrew:
-          packages:
-          - cppunit
-          - mruby
+#    - os: osx
+#      compiler: gcc
+#      osx_image: xcode11.2
+#      env:
+#        - GCC_VER="9"
+#        - MATRIX_EVAL="CC=gcc-${GCC_VER} && CXX=g++-${GCC_VER}"
+#      addons:
+#        homebrew:
+#          packages:
+#          - cppunit
+#          - mruby
 
     - os: linux
       dist: bionic
