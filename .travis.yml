@@ -22,8 +22,8 @@ jobs:
           packages:
             - gcc-9
             - g++-9
-	    - cmake
-	    - cmake-data
+            - cmake
+            - cmake-data
     - os: linux
       dist: bionic
       compiler: clang
