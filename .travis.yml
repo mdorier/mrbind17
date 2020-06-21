@@ -8,6 +8,7 @@ jobs:
       env:
         - GCC_VER="9"
         - MATRIX_EVAL="CC=gcc-${GCC_VER} && CXX=g++-${GCC_VER}"
+        - DYLD_LIBRARY_PATH="${DYLD_LIBRARY_PATH}:/usr/local/lib"
       addons:
         homebrew:
           packages:
