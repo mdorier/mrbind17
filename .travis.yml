@@ -56,7 +56,7 @@ before_script:
   - eval "${MATRIX_EVAL}"
 
 script:
-  - export DYLD_LIBRARY_PATH="${DYLD_LIBRARY_PATH}:/usr/local/Cellar/cppunit/1.15.1/lib"
+  - export DYLD_LIBRARY_PATH="${DYLD_LIBRARY_PATH}:/usr/local/lib"
   - cmake -D ENABLE_TESTS:BOOL=TRUE .
   - cmake --build . -- -j2
   - ctest -j2
