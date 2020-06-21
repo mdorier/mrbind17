@@ -14,6 +14,7 @@
 #include <mruby/variable.h>
 #include <string>
 #include <exception>
+#include <cstring>
 
 namespace mrbind17 {
 

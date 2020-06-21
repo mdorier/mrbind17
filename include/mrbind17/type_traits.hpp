@@ -2,6 +2,7 @@
 #define MRBIND17_TYPE_TRAITS_H_
 
 #include <type_traits>
+#include <functional>
 #include <string>
 
 namespace mrbind17 {
