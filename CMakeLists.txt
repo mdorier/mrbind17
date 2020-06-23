@@ -9,7 +9,8 @@ set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
 
 add_definitions(-g)
 option(ENABLE_TESTS "Build tests. May require CppUnit_ROOT" OFF)
-if (CMAKE_COMPILER_IS_GNUCC)
+
+if (${CMAKE_CXX_COMPILER_ID} EQUAL "GNU")
     option(ENABLE_COVERAGE "Enable code coverage." OFF)
     if (ENABLE_COVERAGE)
         add_compile_options(--coverage --O0)
