@@ -9,6 +9,12 @@ set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
 
 add_definitions(-g)
 option(ENABLE_TESTS "Build tests. May require CppUnit_ROOT" OFF)
+if (CMAKE_COMPILER_IS_GNUCC)
+    option(ENABLE_COVERAGE "Enable code coverage." OFF)
+    if (ENABLE_COVERAGE)
+        add_compile_options(--coverage --O0)
+    endif ()
+endif ()
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -29,6 +35,6 @@ else (CPPUNIT_FOUND)
     message(STATUS "CppUnit not found, unit tests will not be compiled")
 endif (CPPUNIT_FOUND)
 
-install (DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/mrbind14
+install (DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/mrbind17
          DESTINATION include
          FILES_MATCHING PATTERN "*.hpp")

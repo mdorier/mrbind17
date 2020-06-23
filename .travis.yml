@@ -57,6 +57,7 @@ before_script:
 
 script:
   - export DYLD_LIBRARY_PATH="${DYLD_LIBRARY_PATH}:/usr/local/Cellar/cppunit/1.15.1/lib"
-  - cmake -D ENABLE_TESTS:BOOL=TRUE .
+  - cmake -D ENABLE_TESTS:BOOL=TRUE -D ENABLE_COVERAGE:BOOL=TRUE .
   - cmake --build . -- -j2
   - ctest -j2
+  - bash <(curl -s https://codecov.io/bash)
